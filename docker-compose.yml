@@ -1,0 +1,15 @@
+version: '3'
+
+services: 
+  app:
+    image: python-source-context-demo:latest
+    build: .
+    environment:
+      NEW_RELIC_DEVELOPER_MODE: $NEW_RELIC_DEVELOPER_MODE
+      NEW_RELIC_LICENSE_KEY: $NEW_RELIC_LICENSE_KEY
+      NEW_RELIC_HOST: $NEW_RELIC_HOST
+    ports:
+      - 127.0.0.1:8000:8000
+    volumes:
+      - "./cron.log:/var/log/cron.log"
+      - "./python.log:/var/log/python.log"

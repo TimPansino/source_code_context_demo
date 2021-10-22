@@ -1,0 +1,5 @@
+Flask
+gunicorn
+requests
+git+https://github.com/newrelic/newrelic-python-agent.git@experiment-source-context
+locust
