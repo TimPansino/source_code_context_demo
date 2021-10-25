@@ -5,7 +5,7 @@ class User(HttpUser):
     wait_time = between(60, 60*3)
     host="http://localhost:8000"
 
-    @task(5)
+    @task(3)
     def hello_world(self):
         self.client.get("/")
 
