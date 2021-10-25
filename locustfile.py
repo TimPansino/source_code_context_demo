@@ -10,5 +10,9 @@ class User(HttpUser):
         self.client.get("/")
 
     @task(1)
-    def error(self):
+    def simple_error(self):
         self.client.get("/error")
+
+    @task(1)
+    def external_error(self):
+        self.client.get("/external/error")

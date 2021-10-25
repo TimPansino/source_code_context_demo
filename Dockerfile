@@ -25,4 +25,3 @@ ENV NEW_RELIC_CONFIG_FILE=/newrelic.ini
 
 # Start with script
 ENTRYPOINT [ "/entrypoint.sh" ]
-
