@@ -5,9 +5,13 @@ class User(HttpUser):
     wait_time = between(60, 60*3)
     host="http://localhost:8000"
 
-    @task(3)
-    def hello_world(self):
+    @task(2)
+    def simple(self):
         self.client.get("/")
+
+    @task(1)
+    def external(self):
+        self.client.get("/external")
 
     @task(1)
     def simple_error(self):

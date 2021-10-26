@@ -15,8 +15,7 @@ RUN touch /var/log/python.log
 
 # Add source code
 COPY newrelic.ini /newrelic.ini
-COPY main.py /main.py
-COPY locustfile.py /locustfile.py
+COPY src /src
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
@@ -24,4 +23,5 @@ RUN chmod +x /entrypoint.sh
 ENV NEW_RELIC_CONFIG_FILE=/newrelic.ini
 
 # Start with script
+WORKDIR /src
 ENTRYPOINT [ "/entrypoint.sh" ]
