@@ -1,5 +1,5 @@
 Flask
 gunicorn
 requests
-git+https://github.com/newrelic/newrelic-python-agent.git@experiment-source-context
+git+https://github.com/newrelic/newrelic-python-agent.git@09e76e2763eb64e33760162c12ccac03677ea5f7
 locust
