@@ -1,4 +1,5 @@
 import time
+import random
 from locust import HttpUser, task, between
 
 class User(HttpUser):
@@ -20,3 +21,7 @@ class User(HttpUser):
     @task(1)
     def external_error(self):
         self.client.get("/external/error")
+
+    @task(1)
+    def db_calls(self):
+        self.client.get("/letters/%d" % random.randint(1, 35))
