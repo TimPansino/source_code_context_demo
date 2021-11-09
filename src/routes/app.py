@@ -1,7 +1,9 @@
 import requests
 from flask import Flask
+from . import db
 
 app = Flask(__name__)
+con = None
 
 
 @app.route('/')
@@ -35,6 +37,13 @@ def external_error():
     req.raise_for_status()
 
     return req.text
+
+
+@app.route('/letters/<id_>')
+def db_call(id_):
+    con = db.connect()
+    cursor = con.execute("SELECT letter FROM letters WHERE id=%d" % int(id_))
+    return str(cursor.fetchone()[0])  # Intentional indexing issues here
 
 
 def call_me(i=3):
