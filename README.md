@@ -37,3 +37,5 @@ This demo is meant to provide a proof of concept as well as example data for the
 1. Optionally start the traffic driver from another terminal with `cd src` and `locust --headless --users 5 --spawn-rate 1 -f locustfile.py`
 1. View logs in the `src/logs/` directory.
 1. Stop the application with `Ctrl-C`.
+
+Note: In order to configure the agent to send context attributes, add `source_code_context.enabled=True` to the newrelic.ini file. This setting currently defaults to False and if it is not explicitly added to the agent configuration file, no attributes will be attached to any data type.
