@@ -1,6 +1,7 @@
 import requests
 from flask import Flask
 from . import db
+from newrelic.agent import function_trace, FunctionTraceWrapper
 
 app = Flask(__name__)
 con = None
@@ -9,6 +10,9 @@ con = None
 @app.route('/')
 def hello_world():
     call_me()  # Maybe
+    MyClass().my_method()
+    my_lambda = FunctionTraceWrapper(lambda: 1)
+    my_lambda()
 
     return "Hello World!"
 
@@ -55,3 +59,9 @@ def call_me(i=3):
 def other_function():
     print("Hello")
     return 3
+
+
+class MyClass(object):
+    @function_trace()
+    def my_method(self):
+        return 1
