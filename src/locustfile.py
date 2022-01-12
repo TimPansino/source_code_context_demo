@@ -1,10 +1,12 @@
-import time
 import random
-from locust import HttpUser, task, between
+import time
+
+from locust import HttpUser, between, task
+
 
 class User(HttpUser):
-    wait_time = between(60, 60*3)
-    host="http://localhost:8000"
+    wait_time = between(60, 60 * 3)
+    host = "http://localhost:8000"
 
     @task(2)
     def simple(self):
