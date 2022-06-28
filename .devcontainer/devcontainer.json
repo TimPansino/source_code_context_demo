@@ -39,8 +39,8 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"ms-python.vscode-pylance",
-//				"codestream.codestream",
-				"/home/vscode/codestream.vsix",
+				"codestream.codestream",
+//				"/home/vscode/codestream.vsix",
 				"ms-azuretools.vscode-docker"
 			]
 		}
