@@ -40,7 +40,7 @@
 			"extensions": [
 				"ms-python.vscode-pylance",
 //				"codestream.codestream",
-				"/workspaces/codestream.vsix",
+				"/home/vscode/codestream.vsix",
 				"ms-azuretools.vscode-docker"
 			]
 		}
