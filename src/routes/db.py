@@ -2,7 +2,7 @@ import os
 import sqlite3
 import string
 
-
+# All the changes
 def connect():
     db_path = os.path.join(os.path.dirname(__file__), "example.db")
     if os.path.exists(db_path):

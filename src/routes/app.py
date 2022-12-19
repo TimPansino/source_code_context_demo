@@ -24,15 +24,15 @@ def hello_world():
     return "Hello World!"
 
 
-@app.route("/error")
+@app.route("/error") # Dave changed this
 def error():
-    raise ValueError("1 != 0")
+    raise ValueError("1 != 0") # Dave changed that
 
 
-@app.route("/external")
+@app.route("/external") # Dave changed more
 def external_call():
     req = requests.get("http://localhost:8000/external/source")
-    req.raise_for_status()
+    req.raise_for_status() # Dave changed things
 
     return " ".join(("External:", req.text))
 
